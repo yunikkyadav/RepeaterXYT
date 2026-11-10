@@ -1,0 +1,1058 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#080808">
+<title>RepeaterXYT | Official Creator</title>
+
+<!-- Google Fonts -->
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- Font Awesome -->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+<style>
+:root {
+    --primary: #ff0000;
+    --primary-dark: #b90000;
+    --bg: #080808;
+    --bg2: #111111;
+    --card: #171717;
+    --white: #ffffff;
+    --gray: #999999;
+    --border: rgba(255,255,255,.09);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    scroll-behavior: smooth;
+}
+
+body {
+    background: var(--bg);
+    color: var(--white);
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+a {
+    color: inherit;
+    text-decoration: none;
+}
+
+button, input, textarea {
+    font: inherit;
+}
+
+.container {
+    width: 90%;
+    max-width: 1200px;
+    margin: auto;
+}
+
+section {
+    padding: 100px 0;
+    scroll-margin-top: 75px;
+}
+
+.section-title {
+    text-align: center;
+    margin-bottom: 50px;
+}
+
+.section-title h2 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(26px, 4vw, 38px);
+    text-transform: uppercase;
+}
+
+.section-title h2 span {
+    color: var(--primary);
+}
+
+.section-title p {
+    color: var(--gray);
+    margin-top: 12px;
+}
+
+/* NAVBAR */
+
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1000;
+    background: rgba(8,8,8,.78);
+    backdrop-filter: blur(18px);
+    border-bottom: 1px solid var(--border);
+}
+
+.navbar {
+    height: 75px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 23px;
+    font-weight: 900;
+}
+
+.logo span {
+    color: var(--primary);
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+    list-style: none;
+}
+
+.nav-links a {
+    font-size: 13px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.nav-links a:hover {
+    color: var(--primary);
+}
+
+.nav-social {
+    color: var(--primary);
+    font-size: 20px;
+}
+
+.menu-btn {
+    display: none;
+    font-size: 25px;
+    background: none;
+    border: none;
+    color: white;
+    cursor: pointer;
+}
+
+/* HERO */
+
+.hero {
+    min-height: 90vh;
+    display: flex;
+    align-items: center;
+    position: relative;
+    overflow: hidden;
+    padding-top: 100px;
+    background:
+        radial-gradient(ellipse at 80% 50%, rgba(255,0,0,.13), transparent 45%),
+        linear-gradient(120deg,#080808,#141414,#080808);
+}
+
+.hero::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-image:
+        linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),
+        linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);
+    background-size: 45px 45px;
+    pointer-events: none;
+}
+
+.hero-content {
+    position: relative;
+    z-index: 2;
+    max-width: 750px;
+}
+
+.hero-tag {
+    display: inline-block;
+    padding: 9px 17px;
+    border: 1px solid rgba(255,0,0,.5);
+    border-radius: 30px;
+    color: #ff5555;
+    font-size: 12px;
+    letter-spacing: 2px;
+    margin-bottom: 25px;
+}
+
+.hero h1 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: clamp(42px, 8vw, 85px);
+    line-height: 1.15;
+    font-weight: 900;
+}
+
+.hero h1 span {
+    color: var(--primary);
+    text-shadow: 0 0 35px rgba(255,0,0,.5);
+}
+
+.hero p {
+    color: #aaa;
+    font-size: 15px;
+    max-width: 560px;
+    line-height: 1.9;
+    margin: 25px 0 35px;
+}
+
+.hero-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 15px;
+}
+
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 10px;
+    padding: 15px 27px;
+    border-radius: 5px;
+    font-size: 13px;
+    font-weight: 700;
+    transition: .3s;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background: var(--primary);
+    color: white;
+    border: 1px solid var(--primary);
+}
+
+.btn-outline {
+    border: 1px solid #555;
+    color: white;
+    background: rgba(255,255,255,.03);
+}
+
+.btn:hover {
+    transform: translateY(-5px) scale(1.03);
+    box-shadow: 0 8px 30px rgba(255,0,0,.25);
+}
+
+/* FLOATING EFFECT */
+
+.hero-glow {
+    position: absolute;
+    width: 350px;
+    height: 350px;
+    right: 10%;
+    top: 30%;
+    border: 1px solid rgba(255,0,0,.25);
+    border-radius: 50%;
+    box-shadow: 0 0 100px rgba(255,0,0,.1),
+                inset 0 0 80px rgba(255,0,0,.08);
+    animation: float 5s ease-in-out infinite;
+}
+
+.hero-glow::before,
+.hero-glow::after {
+    content: "";
+    position: absolute;
+    inset: 25px;
+    border: 1px dashed rgba(255,0,0,.3);
+    border-radius: 50%;
+}
+
+.hero-glow::after {
+    inset: 65px;
+    border-style: solid;
+}
+
+@keyframes float {
+    0%,100% { transform: translateY(0) rotate(0); }
+    50% { transform: translateY(-20px) rotate(8deg); }
+}
+
+/* VIDEOS */
+
+.videos {
+    background: #0d0d0d;
+}
+
+.video-grid {
+    display: grid;
+    grid-template-columns: repeat(3,1fr);
+    gap: 25px;
+}
+
+.video-card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    overflow: hidden;
+    transition: .35s;
+}
+
+.video-card:hover {
+    transform: translateY(-10px);
+    border-color: var(--primary);
+    box-shadow: 0 15px 40px rgba(255,0,0,.12);
+}
+
+.video-thumb {
+    position: relative;
+    aspect-ratio: 16/9;
+    overflow: hidden;
+    background: #222;
+}
+
+.video-thumb img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: .5s;
+}
+
+.video-card:hover img {
+    transform: scale(1.08);
+}
+
+.play-icon {
+    position: absolute;
+    inset: 0;
+    display: grid;
+    place-items: center;
+    background: rgba(0,0,0,.15);
+}
+
+.play-icon i {
+    background: var(--primary);
+    width: 55px;
+    height: 55px;
+    border-radius: 50%;
+    display: grid;
+    place-items: center;
+    font-size: 20px;
+    box-shadow: 0 0 25px rgba(255,0,0,.5);
+}
+
+.video-info {
+    padding: 20px;
+}
+
+.video-info h3 {
+    font-size: 15px;
+    margin-bottom: 12px;
+    line-height: 1.6;
+}
+
+.video-info a {
+    color: var(--primary);
+    font-size: 12px;
+    font-weight: 700;
+}
+
+.feed-message {
+    text-align: center;
+    color: var(--gray);
+    padding: 35px;
+    grid-column: 1/-1;
+}
+
+/* ABOUT */
+
+.about {
+    background: var(--bg);
+}
+
+.about-content {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 60px;
+    align-items: center;
+}
+
+.about-box {
+    padding: 35px;
+    background: linear-gradient(145deg,#171717,#0e0e0e);
+    border: 1px solid var(--border);
+    border-left: 3px solid var(--primary);
+    border-radius: 10px;
+}
+
+.about-box h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 24px;
+    margin-bottom: 20px;
+}
+
+.about-box h3 span {
+    color: var(--primary);
+}
+
+.about-box p {
+    color: var(--gray);
+    line-height: 1.9;
+    font-size: 14px;
+}
+
+.stats-grid {
+    display: grid;
+    grid-template-columns: repeat(2,1fr);
+    gap: 18px;
+}
+
+.stat-card {
+    text-align: center;
+    background: var(--card);
+    padding: 30px 15px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    transition: .3s;
+}
+
+.stat-card:hover {
+    border-color: var(--primary);
+    transform: scale(1.05);
+}
+
+.stat-card i {
+    font-size: 28px;
+    color: var(--primary);
+    margin-bottom: 15px;
+}
+
+.stat-card h3 {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 23px;
+}
+
+.stat-card p {
+    font-size: 12px;
+    color: var(--gray);
+    margin-top: 7px;
+}
+
+/* CONTACT */
+
+.contact {
+    background: #0d0d0d;
+}
+
+.contact-wrapper {
+    max-width: 750px;
+    margin: auto;
+    padding: 35px;
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 9px;
+    font-size: 13px;
+}
+
+.form-group input,
+.form-group textarea {
+    width: 100%;
+    padding: 15px;
+    color: white;
+    background: #0c0c0c;
+    border: 1px solid #333;
+    border-radius: 5px;
+    outline: none;
+    transition: .3s;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+    border-color: var(--primary);
+    box-shadow: 0 0 12px rgba(255,0,0,.1);
+}
+
+.form-group textarea {
+    min-height: 140px;
+    resize: vertical;
+}
+
+.contact-wrapper .btn {
+    width: 100%;
+}
+
+/* FOOTER */
+
+footer {
+    background: #050505;
+    padding: 45px 0 20px;
+    text-align: center;
+    border-top: 1px solid var(--border);
+}
+
+.footer-logo {
+    font-family: 'Orbitron', sans-serif;
+    font-size: 25px;
+    font-weight: 900;
+}
+
+.footer-logo span {
+    color: var(--primary);
+}
+
+.footer-text {
+    color: var(--gray);
+    font-size: 13px;
+    margin: 15px 0 25px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    margin-bottom: 30px;
+}
+
+.social-icons a {
+    width: 43px;
+    height: 43px;
+    display: grid;
+    place-items: center;
+    background: #171717;
+    border: 1px solid #333;
+    border-radius: 50%;
+    font-size: 17px;
+    transition: .3s;
+}
+
+.social-icons a:hover {
+    background: var(--primary);
+    border-color: var(--primary);
+    transform: translateY(-5px);
+}
+
+.copyright {
+    border-top: 1px solid var(--border);
+    padding-top: 20px;
+    color: #666;
+    font-size: 11px;
+}
+
+/* ANIMATIONS */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+    transition: .8s ease;
+}
+
+.reveal.active {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* RESPONSIVE */
+
+@media(max-width: 900px) {
+    .video-grid {
+        grid-template-columns: repeat(2,1fr);
+    }
+
+    .hero-glow {
+        right: -100px;
+        opacity: .4;
+    }
+
+    .about-content {
+        gap: 30px;
+    }
+}
+
+@media(max-width: 650px) {
+    section {
+        padding: 75px 0;
+    }
+
+    .navbar {
+        height: 68px;
+    }
+
+    .logo {
+        font-size: 19px;
+    }
+
+    .menu-btn {
+        display: block;
+    }
+
+    .nav-links {
+        position: absolute;
+        top: 68px;
+        left: 0;
+        width: 100%;
+        background: rgba(8,8,8,.97);
+        backdrop-filter: blur(15px);
+        display: none;
+        flex-direction: column;
+        padding: 25px;
+        gap: 25px;
+        border-bottom: 1px solid var(--border);
+    }
+
+    .nav-links.show {
+        display: flex;
+    }
+
+    .hero {
+        min-height: 85vh;
+    }
+
+    .hero-glow {
+        width: 200px;
+        height: 200px;
+        top: 55%;
+        right: -80px;
+    }
+
+    .hero p {
+        font-size: 13px;
+    }
+
+    .video-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .about-content {
+        grid-template-columns: 1fr;
+    }
+
+    .contact-wrapper {
+        padding: 22px;
+    }
+
+    .stats-grid {
+        gap: 12px;
+    }
+
+    .stat-card {
+        padding: 23px 10px;
+    }
+}
+</style>
+</head>
+
+<body>
+
+<!-- NAVBAR -->
+<header>
+    <nav class="navbar container">
+        <a href="#home" class="logo">REPEATER<span>XYT.</span></a>
+
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">HOME</a></li>
+            <li><a href="#videos">VIDEOS</a></li>
+            <li><a href="#about">ABOUT</a></li>
+            <li><a href="#contact">CONTACT</a></li>
+            <li><a href="https://www.youtube.com/channel/UC92Cg3fiSzmley2tsIGwPOw" target="_blank" rel="noopener">
+                <i class="fa-brands fa-youtube nav-social"></i>
+            </a></li>
+        </ul>
+
+        <button class="menu-btn" id="menuBtn" aria-label="Toggle navigation" aria-expanded="false">
+            <i class="fa-solid fa-bars"></i>
+        </button>
+    </nav>
+</header>
+
+<!-- HERO -->
+<section class="hero" id="home">
+    <div class="hero-glow"></div>
+
+    <div class="container">
+        <div class="hero-content">
+            <span class="hero-tag">
+                <i class="fa-solid fa-circle"></i> OFFICIAL CREATOR WEBSITE
+            </span>
+
+            <h1>WELCOME TO<br><span>REPEATERXYT</span></h1>
+
+            <p>
+                Gaming, entertainment and epic content!
+                Welcome to my official creator website.
+                Explore my latest videos, join the community
+                and be part of the journey.
+            </p>
+
+            <div class="hero-buttons">
+                <a href="#videos" class="btn btn-primary">
+                    <i class="fa-solid fa-play"></i> WATCH VIDEOS
+                </a>
+
+                <a href="https://www.youtube.com/channel/UC92Cg3fiSzmley2tsIGwPOw?sub_confirmation=1"
+                   target="_blank" rel="noopener" class="btn btn-outline">
+                    <i class="fa-brands fa-youtube"></i> SUBSCRIBE
+                </a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- VIDEOS -->
+<section class="videos" id="videos">
+    <div class="container">
+        <div class="section-title reveal">
+            <h2>LATEST <span>VIDEOS</span></h2>
+            <p>Check out my newest YouTube uploads.</p>
+        </div>
+
+        <div class="video-grid" id="videoGrid">
+            <div class="feed-message">
+                <i class="fa-solid fa-spinner fa-spin"></i>
+                Loading latest videos...
+            </div>
+        </div>
+
+        <div style="text-align:center;margin-top:40px">
+            <a href="https://www.youtube.com/channel/UC92Cg3fiSzmley2tsIGwPOw/videos"
+               target="_blank" rel="noopener" class="btn btn-primary">
+                VIEW ALL VIDEOS <i class="fa-solid fa-arrow-right"></i>
+            </a>
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT -->
+<section class="about" id="about">
+    <div class="container">
+        <div class="section-title reveal">
+            <h2>ABOUT <span>ME</span></h2>
+            <p>Get to know the creator behind the channel.</p>
+        </div>
+
+        <div class="about-content">
+            <div class="about-box reveal">
+                <h3>HEY, I'M <span>REPEATERXYT</span></h3>
+
+                <p>
+                    Welcome to my gaming world! I'm a content creator
+                    passionate about gaming, entertainment and creating
+                    amazing videos for my audience.
+                    <br><br>
+                    My goal is to entertain, inspire and build an awesome
+                    community. Subscribe to the channel and join the journey!
+                </p>
+
+                <a href="https://www.youtube.com/channel/UC92Cg3fiSzmley2tsIGwPOw"
+                   target="_blank" rel="noopener" class="btn btn-primary"
+                   style="margin-top:25px">
+                    <i class="fa-brands fa-youtube"></i> MY CHANNEL
+                </a>
+            </div>
+
+            <div class="stats-grid reveal">
+                <div class="stat-card">
+                    <i class="fa-brands fa-youtube"></i>
+                    <h3>YT</h3>
+                    <p>YOUTUBE CREATOR</p>
+                </div>
+
+                <div class="stat-card">
+                    <i class="fa-solid fa-video"></i>
+                    <h3>3+</h3>
+                    <p>LATEST VIDEOS</p>
+                </div>
+
+                <div class="stat-card">
+                    <i class="fa-solid fa-gamepad"></i>
+                    <h3>GAMING</h3>
+                    <p>CONTENT</p>
+                </div>
+
+                <div class="stat-card">
+                    <i class="fa-solid fa-users"></i>
+                    <h3>COMMUNITY</h3>
+                    <p>JOIN THE FAMILY</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT -->
+<section class="contact" id="contact">
+    <div class="container">
+        <div class="section-title reveal">
+            <h2>CONTACT <span>ME</span></h2>
+            <p>Have a collaboration idea? Let's talk!</p>
+        </div>
+
+        <div class="contact-wrapper reveal">
+            <form id="contactForm">
+                <div class="form-group">
+                    <label for="name">Your Name</label>
+                    <input type="text" id="name" placeholder="Enter your name" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="email">Your Email</label>
+                    <input type="email" id="email" placeholder="Enter your email" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="subject">Subject</label>
+                    <input type="text" id="subject" placeholder="Collaboration / Business / Other" required>
+                </div>
+
+                <div class="form-group">
+                    <label for="message">Your Message</label>
+                    <textarea id="message" placeholder="Write your message..." required></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-primary">
+                    SEND MESSAGE <i class="fa-solid fa-paper-plane"></i>
+                </button>
+            </form>
+        </div>
+    </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+    <div class="container">
+        <div class="footer-logo">REPEATER<span>XYT.</span></div>
+
+        <p class="footer-text">
+            Gaming • Entertainment • Creativity
+        </p>
+
+        <div class="social-icons">
+            <a href="https://www.youtube.com/channel/UC92Cg3fiSzmley2tsIGwPOw"
+               target="_blank" rel="noopener" aria-label="YouTube">
+                <i class="fa-brands fa-youtube"></i>
+            </a>
+
+            <a href="https://www.instagram.com/" target="_blank"
+               rel="noopener" aria-label="Instagram">
+                <i class="fa-brands fa-instagram"></i>
+            </a>
+
+            <a href="https://www.facebook.com/" target="_blank"
+               rel="noopener" aria-label="Facebook">
+                <i class="fa-brands fa-facebook-f"></i>
+            </a>
+
+            <a href="https://discord.com/" target="_blank"
+               rel="noopener" aria-label="Discord">
+                <i class="fa-brands fa-discord"></i>
+            </a>
+        </div>
+
+        <div class="copyright">
+            © <span id="year"></span> RepeaterXYT. All Rights Reserved.
+            <br><br>
+            Made with <i class="fa-solid fa-heart" style="color:red"></i>
+            for the gaming community.
+        </div>
+    </div>
+</footer>
+
+<script>
+
+// ========================================
+// MOBILE NAVIGATION
+// ========================================
+
+const menuBtn = document.getElementById("menuBtn");
+const navLinks = document.getElementById("navLinks");
+
+menuBtn.addEventListener("click", () => {
+    const isOpen = navLinks.classList.toggle("show");
+    menuBtn.setAttribute("aria-expanded", isOpen);
+    menuBtn.innerHTML = isOpen
+        ? '<i class="fa-solid fa-xmark"></i>'
+        : '<i class="fa-solid fa-bars"></i>';
+});
+
+document.querySelectorAll(".nav-links a").forEach(link => {
+    link.addEventListener("click", () => {
+        navLinks.classList.remove("show");
+        menuBtn.setAttribute("aria-expanded", "false");
+        menuBtn.innerHTML = '<i class="fa-solid fa-bars"></i>';
+    });
+});
+
+// ========================================
+// YOUTUBE AUTOMATIC RSS VIDEO FEED
+// ========================================
+
+const CHANNEL_ID = "UC92Cg3fiSzmley2tsIGwPOw";
+
+async function loadYouTubeVideos() {
+
+    const videoGrid = document.getElementById("videoGrid");
+
+    const rssURL =
+        `https://www.youtube.com/feeds/videos.xml?channel_id=${CHANNEL_ID}`;
+
+    const apiURL =
+        `https://api.rss2json.com/v1/api.json?rss_url=${encodeURIComponent(rssURL)}`;
+
+    try {
+
+        const response = await fetch(apiURL);
+
+        if (!response.ok) {
+            throw new Error("RSS request failed");
+        }
+
+        const data = await response.json();
+
+        if (data.status !== "ok" || !data.items?.length) {
+            throw new Error("No videos available");
+        }
+
+        videoGrid.innerHTML = "";
+
+        // Get latest 3 videos
+        data.items.slice(0, 3).forEach(video => {
+
+            // Parse YouTube ID from RSS guid
+            const videoID = video.guid.split(":").pop();
+
+            const thumbnail =
+                `https://i.ytimg.com/vi/${videoID}/hqdefault.jpg`;
+
+            const card = document.createElement("article");
+            card.className = "video-card";
+
+            const thumb = document.createElement("div");
+            thumb.className = "video-thumb";
+
+            const img = document.createElement("img");
+            img.src = thumbnail;
+            img.alt = video.title;
+            img.loading = "lazy";
+
+            const play = document.createElement("div");
+            play.className = "play-icon";
+
+            const playIcon = document.createElement("i");
+            playIcon.className = "fa-solid fa-play";
+
+            play.appendChild(playIcon);
+            thumb.append(img, play);
+
+            const info = document.createElement("div");
+            info.className = "video-info";
+
+            const title = document.createElement("h3");
+            title.textContent = video.title;
+
+            const link = document.createElement("a");
+            link.href = `https://www.youtube.com/watch?v=${videoID}`;
+            link.target = "_blank";
+            link.rel = "noopener";
+            link.innerHTML = 'WATCH VIDEO <i class="fa-solid fa-arrow-right"></i>';
+
+            info.append(title, link);
+            card.append(thumb, info);
+
+            card.style.cursor = "pointer";
+
+            card.addEventListener("click", event => {
+                if (event.target.closest("a")) return;
+                window.open(
+                    `https://www.youtube.com/watch?v=${videoID}`,
+                    "_blank",
+                    "noopener"
+                );
+            });
+
+            videoGrid.appendChild(card);
+        });
+
+    } catch (error) {
+
+        console.error("YouTube feed error:", error);
+
+        videoGrid.innerHTML = `
+            <div class="feed-message">
+                <i class="fa-solid fa-triangle-exclamation"></i>
+                <p>Unable to load videos right now.</p>
+                <a href="https://www.youtube.com/channel/${CHANNEL_ID}/videos"
+                   target="_blank" rel="noopener"
+                   style="color:#ff0000">
+                   Visit YouTube Channel
+                </a>
+            </div>
+        `;
+    }
+}
+
+loadYouTubeVideos();
+
+// ========================================
+// CONTACT FORM - EMAIL CLIENT
+// ========================================
+
+document.getElementById("contactForm").addEventListener("submit", function(e) {
+
+    e.preventDefault();
+
+    const name = document.getElementById("name").value.trim();
+    const email = document.getElementById("email").value.trim();
+    const subject = document.getElementById("subject").value.trim();
+    const message = document.getElementById("message").value.trim();
+
+    if (!name || !email || !subject || !message) {
+        alert("Please fill in all fields.");
+        return;
+    }
+
+    const body = encodeURIComponent(
+        `Name: ${name}\nEmail: ${email}\n\n${message}`
+    );
+
+    const mailto =
+        `mailto:YOUR_EMAIL@example.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+
+    window.location.href = mailto;
+
+});
+
+// ========================================
+// SCROLL REVEAL ANIMATION
+// ========================================
+
+const observer = new IntersectionObserver(entries => {
+
+    entries.forEach(entry => {
+
+        if (entry.isIntersecting) {
+            entry.target.classList.add("active");
+            observer.unobserve(entry.target);
+        }
+
+    });
+
+}, { threshold: 0.12 });
+
+document.querySelectorAll(".reveal").forEach(element => {
+    observer.observe(element);
+});
+
+// ========================================
+// DYNAMIC COPYRIGHT YEAR
+// ========================================
+
+document.getElementById("year").textContent =
+    new Date().getFullYear();
+
+</script>
+
+</body>
+</html>
